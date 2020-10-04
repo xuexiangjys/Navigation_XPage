@@ -1,2 +1,3 @@
+include ':fragment-example'
 include ':navigation-example'
 include ':xpage-example'

@@ -21,7 +21,6 @@ import android.app.Application;
 
 import com.xuexiang.xaop.XAOP;
 import com.xuexiang.xpage.PageConfig;
-import com.xuexiang.xpage.XpageexamplePageConfig;
 import com.xuexiang.xpageexample.MyApp;
 import com.xuexiang.xpageexample.core.BaseActivity;
 import com.xuexiang.xpageexample.utils.XToastUtils;
@@ -74,13 +73,7 @@ public final class XBasicLibInit {
      */
     private static void initXPage(Application application) {
         PageConfig.getInstance()
-                //页面注册
-                .setPageConfiguration(context -> {
-                    //自动注册页面,是编译时自动生成的，build一下就出来了
-                    return XpageexamplePageConfig.getInstance().getPages();
-                })
                 .debug(MyApp.isDebug() ? "PageLog" : null)
-                .enableWatcher(MyApp.isDebug())
                 .setContainActivityClazz(BaseActivity.class)
                 .init(application);
     }
